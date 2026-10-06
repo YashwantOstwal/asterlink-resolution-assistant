@@ -5,8 +5,8 @@ from unstructured.chunking.title import chunk_by_title
 
 def parse_pdf(
     file_path: str,
-    max_characters: int = 1200,
-    new_after_n_chars: int = 1000,
+    max_characters: int = 4000,
+    new_after_n_chars: int = 3800,
     combine_text_under_n_chars: int = 250,
 ):
     elements = partition_pdf(
