@@ -1,0 +1,437 @@
+{
+  "new_tickets": [
+    {
+      "complaint": "Fiber works but large downloads crawl and 4K streaming buffers even on Ethernet, far below the speed I normally get.",
+      "ideal_resolution_steps": [
+        "Compared measured throughput with the active service tier and verified the customer's current speed profile.",
+        "Repeated the test on another device and used a wired or near-gateway test to separate Wi-Fi limitations from access-network performance.",
+        "Checked gateway load and access-line/network indicators for congestion or degradation.",
+        "Corrected the service profile/local bottleneck that was identified and repeated the speed test to verify improvement."
+      ],
+      "similar_ticket_ids": [
+        "TK-5",
+        "TK-8"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-003"
+      ],
+      "category": "Performance",
+      "product": "Home Internet",
+      "severity": "medium",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "Speed tests are fine in the morning but fall sharply every evening on both a wired PC and phones near the router. Wi-Fi performance is much weaker in the far rooms than it is beside the gateway. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Compared measured throughput with the active service tier and verified the customer's current speed profile.",
+        "Checked gateway load and access-line/network indicators for congestion or degradation.",
+        "Repeated the test on another device and used a wired or near-gateway test to separate Wi-Fi limitations from access-network performance.",
+        "Compared near-gateway and remote-room Wi-Fi performance, reviewed placement/interference, and adjusted coverage or recommended supported mesh where needed.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-6",
+        "TK-5",
+        "TK-9"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-003",
+        "KB-NET-005"
+      ],
+      "category": "Performance",
+      "product": "Home Internet",
+      "severity": "medium",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "I upgraded to a faster plan yesterday, but the line still tests at roughly the old speed even over Ethernet.",
+      "ideal_resolution_steps": [
+        "Compared measured throughput with the active service tier and verified the speed-upgrade order, effective date, account state, and current network/service provisioning.",
+        "Repeated the test on another device and used a wired or near-gateway test to separate Wi-Fi limitations from access-network performance.",
+        "Checked gateway load and access-line/network indicators for congestion or degradation.",
+        "Reconciled or reapplied the approved service change when the provisioned profile did not match the upgraded plan, then repeated the wired speed test to verify improvement."
+      ],
+      "similar_ticket_ids": [
+        "TK-5",
+        "TK-42"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-003",
+        "KB-BIL-009"
+      ],
+      "category": "Performance",
+      "product": "Home Internet",
+      "severity": "medium",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "Wi-Fi is excellent in the living room but drops to one bar in the upstairs bedroom and video calls fail there.",
+      "ideal_resolution_steps": [
+        "Confirmed the broadband connection itself was healthy using a wired/near-router test.",
+        "Compared signal and performance in the affected rooms with areas close to the gateway.",
+        "Adjusted gateway placement and selected a less congested wireless configuration where appropriate.",
+        "Rechecked the weak areas and recommended a supported mesh/extender only where a single access point could not cover the premises."
+      ],
+      "similar_ticket_ids": [
+        "TK-9",
+        "TK-10"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-005"
+      ],
+      "category": "Wi-Fi",
+      "product": "Home Wi-Fi",
+      "severity": "medium",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "The internet is fine over Ethernet, but the back office has a weak wireless signal and devices disconnect whenever the door is closed. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Confirmed the broadband connection itself was healthy using a wired/near-router test.",
+        "Adjusted gateway placement and selected a less congested wireless configuration where appropriate.",
+        "Compared signal and performance in the affected rooms with areas close to the gateway.",
+        "Rechecked the weak areas and recommended a supported mesh/extender only where a single access point could not cover the premises."
+      ],
+      "similar_ticket_ids": [
+        "TK-10",
+        "TK-9"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-005"
+      ],
+      "category": "Wi-Fi",
+      "product": "Home Wi-Fi",
+      "severity": "medium",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "The broadband speed is normal near the gateway, yet the far bedroom has slow Wi-Fi and frequent reconnects. The mesh/extender refuses to pair reliably or shows weak backhaul in the area it is meant to cover. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Confirmed the broadband connection itself was healthy using a wired/near-router test.",
+        "Compared signal and performance in the affected rooms with areas close to the gateway.",
+        "Adjusted gateway placement and selected a less congested wireless configuration where appropriate.",
+        "Validated extender/mesh compatibility, pairing distance, firmware, and backhaul quality before repositioning or replacing the node.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-24",
+        "TK-23",
+        "TK-9"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-005",
+        "KB-NET-012"
+      ],
+      "category": "Wi-Fi",
+      "product": "Home Wi-Fi",
+      "severity": "medium",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "I get full internet speed on a wired PC, but wireless devices in two rooms lose signal and switch to mobile data. One regular device can see the home Wi-Fi network but repeatedly fails to join it.",
+      "ideal_resolution_steps": [
+        "Confirmed the broadband connection itself was healthy using a wired/near-router test.",
+        "Adjusted gateway placement and selected a less congested wireless configuration where appropriate.",
+        "Compared signal and performance in the affected rooms with areas close to the gateway.",
+        "Validated credentials, saved network state, security/band compatibility, and restored the supported Wi-Fi association settings.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-10",
+        "TK-9",
+        "TK-11"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-005",
+        "KB-NET-006"
+      ],
+      "category": "Wi-Fi",
+      "product": "Home Wi-Fi",
+      "severity": "medium",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "My phone suddenly changed to emergency calls only at home this morning and now calls, texts, and mobile data all fail. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Checked local coverage/outage status and confirmed cellular service was enabled on the device.",
+        "Verified the line and SIM/eSIM were active and correctly associated with a compatible handset.",
+        "Refreshed the network registration state using the supported device/network procedure.",
+        "Confirmed the device registered normally and completed a test call, message, and data session."
+      ],
+      "similar_ticket_ids": [
+        "TK-25",
+        "TK-26"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-001"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "The handset keeps showing searching for network even after a restart, while my account is active and cellular service is turned on.",
+      "ideal_resolution_steps": [
+        "Checked local coverage/outage status and confirmed cellular service was enabled on the device.",
+        "Refreshed the network registration state using the supported device/network procedure.",
+        "Verified the line and SIM/eSIM were active and correctly associated with a compatible handset.",
+        "Confirmed the device registered normally and completed a test call, message, and data session."
+      ],
+      "similar_ticket_ids": [
+        "TK-26",
+        "TK-25"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-001"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "After inserting my replacement SIM the phone recognizes it but never registers on the network. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Checked local coverage/outage status and confirmed cellular service was enabled on the device.",
+        "Verified the line and SIM/eSIM were active and correctly associated with a compatible handset.",
+        "Refreshed the network registration state using the supported device/network procedure.",
+        "Verified the physical SIM identifier, active line, device compatibility, and completed the supported SIM activation/registration refresh.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-26",
+        "TK-25",
+        "TK-47"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-001",
+        "KB-DEV-001"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "I transferred my eSIM to a new phone and the device now shows no service even though activation appears complete. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Checked local coverage/outage status and confirmed cellular service was enabled on the device.",
+        "Refreshed the network registration state using the supported device/network procedure.",
+        "Verified the line and SIM/eSIM were active and correctly associated with a compatible handset.",
+        "Checked eSIM eligibility/profile state and device identifiers, cleared stale provisioning, and issued/activated a fresh approved profile where required.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-49",
+        "TK-50",
+        "TK-25"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-001",
+        "KB-DEV-002"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "Calls and SMS work normally, but every app says offline when I turn Wi-Fi off even though the phone shows 5G.",
+      "ideal_resolution_steps": [
+        "Confirmed that voice/text service worked and that the failure was isolated to mobile data.",
+        "Checked the active data entitlement, account provisioning, and device mobile-data settings.",
+        "Validated the approved carrier/APN profile and refreshed the data-service provisioning.",
+        "Retested mobile internet without Wi-Fi and confirmed a working data session."
+      ],
+      "similar_ticket_ids": [
+        "TK-27",
+        "TK-28",
+        "TK-44"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-002"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "medium",
+      "customer_sentiment": "neutral"
+    },
+    {
+      "complaint": "Mobile data stopped after I changed plans today; voice service still works and the phone has good signal. A requested plan, feature, or service change is marked complete in one place but has not taken effect in billing or provisioning. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Confirmed that voice/text service worked and that the failure was isolated to mobile data.",
+        "Validated the approved carrier/APN profile and refreshed the data-service provisioning.",
+        "Checked the active data entitlement, account provisioning, and device mobile-data settings.",
+        "Compared the requested service change across order, billing, and provisioning systems and reconciled the component that had not taken effect.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-42",
+        "TK-27",
+        "TK-28"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-002",
+        "KB-BIL-009"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "medium",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "I moved my SIM to a new Android phone and calls work, but there is no cellular internet unless I use Wi-Fi. Connected hotspot devices cannot get reliable internet or are far slower than the phone itself. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Confirmed that voice/text service worked and that the failure was isolated to mobile data.",
+        "Checked the active data entitlement, account provisioning, and device mobile-data settings.",
+        "Validated the approved carrier/APN profile and refreshed the data-service provisioning.",
+        "Verified host-device data and plan eligibility, checked hotspot limits/settings, and refreshed tethering or entitlement provisioning.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-28",
+        "TK-27",
+        "TK-41"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-002",
+        "KB-MOB-009"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "medium",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "After resetting network settings, voice and texts returned but mobile data still will not establish a session. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Confirmed that voice/text service worked and that the failure was isolated to mobile data.",
+        "Checked the active data entitlement, account provisioning, and device mobile-data settings.",
+        "Compared the current carrier/APN/network profile with the approved AsterLink configuration, removed stale or unsupported settings, and refreshed the data-service provisioning.",
+        "Retested mobile internet without Wi-Fi and confirmed a working data session."
+      ],
+      "similar_ticket_ids": [
+        "TK-28",
+        "TK-44",
+        "TK-27"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-002",
+        "KB-MOB-010"
+      ],
+      "category": "Connectivity",
+      "product": "Mobile Service",
+      "severity": "medium",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "After contractors worked in our building, the fiber ONT now shows a red LOS light and every phone, laptop, and TV is offline even though the router is still powered. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Confirmed the fault affected all household devices rather than one handset or laptop.",
+        "Confirmed the persistent LOS/PON state and ruled out a router-only fault.",
+        "Checked safe visible fiber connections and reviewed network-side optical status for the ONT.",
+        "Raised a fiber-access repair when the optical path could not be restored through supported remote checks.",
+        "Verified normal optical indicators and internet connectivity after the fiber path was restored."
+      ],
+      "similar_ticket_ids": [
+        "TK-1",
+        "TK-16",
+        "TK-15"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-NET-008",
+        "KB-NET-001"
+      ],
+      "category": "Connectivity",
+      "product": "Home Internet",
+      "severity": "high",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "Calls become robotic and occasionally drop inside my apartment, and Wi-Fi Calling will not register even though the same phone is connected to a stable home Wi-Fi network. I'm frustrated that this problem is still interfering with normal use.",
+      "ideal_resolution_steps": [
+        "Determined whether the voice problem followed a specific location, handset, or line.",
+        "Refreshed the supported voice/network state and repeated test calls in the affected area.",
+        "Captured the exact failure type and checked voice/IMS registration and local network events.",
+        "Confirmed device/line eligibility and stable Wi-Fi, refreshed Wi-Fi Calling registration, and retested on a known-good network.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-32",
+        "TK-31",
+        "TK-40"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-004",
+        "KB-MOB-008"
+      ],
+      "category": "Voice",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "frustrated"
+    },
+    {
+      "complaint": "My phone has service and I can make outgoing calls, but nearly every incoming call goes straight to voicemail without the handset ringing. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Confirmed network registration and identified whether incoming, outgoing, or both call directions were affected.",
+        "Tested a known destination and used the failure behavior to isolate the service configuration issue.",
+        "Reviewed line status, voice provisioning, forwarding/blocking settings, and relevant account restrictions.",
+        "Corrected the supported call-routing/provisioning state and verified incoming and outgoing test calls."
+      ],
+      "similar_ticket_ids": [
+        "TK-34",
+        "TK-33"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-005"
+      ],
+      "category": "Voice",
+      "product": "Mobile Service",
+      "severity": "high",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "Normal SMS still works, but photos and group messages stopped sending after I manually changed the carrier/APN settings while troubleshooting mobile data. I'm worried about this problem and whether the service will work when I need it.",
+      "ideal_resolution_steps": [
+        "Identified whether the failure involved SMS, MMS, group messaging, or RCS specifically.",
+        "Checked network coverage, mobile-data availability, messaging permissions, and application/carrier settings.",
+        "Refreshed the messaging service state and re-registered the supported advanced messaging feature where required.",
+        "Compared APN/carrier/network settings with the approved AsterLink profile, restored supported values, and re-registered the device.",
+        "Retested each reported symptom separately and confirmed the final service/account state matched the documented resolution before closing the ticket."
+      ],
+      "similar_ticket_ids": [
+        "TK-35",
+        "TK-44"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-006",
+        "KB-MOB-010"
+      ],
+      "category": "Messaging",
+      "product": "Mobile Service",
+      "severity": "medium",
+      "customer_sentiment": "worried"
+    },
+    {
+      "complaint": "Since moving to a new phone, normal calls and mobile data work, but callers cannot leave voicemail and I cannot access the mailbox directly.",
+      "ideal_resolution_steps": [
+        "Confirmed normal calling and data connectivity before treating voicemail as the primary fault.",
+        "Tested direct mailbox access separately from the Visual Voicemail application.",
+        "Verified voicemail was active on the line and checked mailbox setup, forwarding, and capacity.",
+        "Reset/reprovisioned the voicemail service and verified that a new test message could be left and retrieved."
+      ],
+      "similar_ticket_ids": [
+        "TK-38",
+        "TK-37"
+      ],
+      "relevant_knowledge_base_ids": [
+        "KB-MOB-007"
+      ],
+      "category": "Voice",
+      "product": "Voicemail",
+      "severity": "low",
+      "customer_sentiment": "neutral"
+    }
+  ]
+}
