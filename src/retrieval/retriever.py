@@ -2,11 +2,6 @@ from vector_store import pc, embeddings
 
 from langchain_pinecone import PineconeVectorStore
 
-TOP_K = 3
-
-KB_SCORE_THRESHOLD = 0.75
-TICKET_SCORE_THRESHOLD = 0.77
-
 def retrieve_relevant_records(complaint: str):
 
     kb_vector_store = PineconeVectorStore(
@@ -19,25 +14,7 @@ def retrieve_relevant_records(complaint: str):
         embedding=embeddings,
     )
 
-    kb_retriever = kb_vector_store.as_retriever(
-        # search_type="similarity_score_threshold",
-        search_kwargs={
-            "k": 2,
-            # "score_threshold": KB_SCORE_THRESHOLD,
-        },
-    )
-
-    ticket_retriever = ticket_vector_store.as_retriever(
-        # search_type="similarity_score_threshold",
-        search_kwargs={
-            "k": 3,
-            # "score_threshold": TICKET_SCORE_THRESHOLD,
-        },
-    )
-    retrieved_kbs = kb_retriever.invoke(
-        complaint
-    )
-    retrieved_tickets = ticket_retriever.invoke(
-        complaint
-    )
+    complaint_vector = embeddings.embed_query(complaint)
+    retrieved_kbs = kb_vector_store.similarity_search_by_vector(complaint_vector, k=2)
+    retrieved_tickets = ticket_vector_store.similarity_search_by_vector(complaint_vector, k=3)
     return (retrieved_kbs,retrieved_tickets)

@@ -6,10 +6,11 @@ from src.retrieval.retriever import retrieve_relevant_records
 def main():
     new_complaint = "I can receive calls and send texts, but mobile internet stopped immediately after an eSIM replacement. Connected hotspot devices cannot get reliable internet or are far slower than the phone itself. I'm frustrated that this problem is still interfering with normal use."
 
-    choices = classify_complaint(new_complaint)
-
     print("\nNew Complaint:")
     print(new_complaint)
+    
+    choices = classify_complaint(new_complaint)
+
     print(f"\nPRODUCT: {choices["product"].choice} (confidence: {choices['product'].confidence})")
     print(f"CATEGORY: {choices['category'].choice} (confidence: {choices['category'].confidence})")
     print(f"SEVERITY: {choices['severity'].choice} (confidence: {choices['severity'].confidence})")
