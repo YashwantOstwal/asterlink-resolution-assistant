@@ -100,6 +100,10 @@ As expected, increasing `K` improves recall but lowers precision. This is partly
 
 ### Generation
 
-Generation quality was evaluated using two complementary checks across the development and held-out test tickets.
+Generation quality was evaluated using JEV as a structured judge across the two development and held-out test ticket sets.
 
-- **Jev-as-a-judge:** Jev evaluated whether the generated resolution was acceptable using a constrained **Yes/No** decision. The average confidence score for the positive judgement was approximately **0.85**.
+| Evaluation Method | Decision Type | Result |
+| --- | --- | ---: |
+| JEV-as-a-Judge | Yes / No | **85% average confidence** |
+
+JEV evaluates whether the generated resolution is semantically aligned with the actual resolution steps using a constrained **Yes/No** decision. The average confidence score for positive judgements was approximately **85%**, providing a structured measure of generation quality across the evaluation set.
