@@ -15,7 +15,7 @@ AsterLink Resolution Assistant is a production-oriented telecom support assistan
 5. [Engineering Explorations & Design Decisions](#5-engineering-explorations--design-decisions)
 6. [Evaluation & Results](#6-evaluation--results)
 7. [System Health, Reliability & Cost](#7-system-health-reliability--cost)
-8. [Engineering Notes & RAG Exploration](#8-engineering-notes--rag-exploration)
+8. [Engineering Notes & RAG Exploration](#8-engineering-notes)
 
 ## 1. Problem & Use Case
 
@@ -29,6 +29,18 @@ AsterLink Resolution Assistant replaces keyword-only lookup with a semantic, AI-
 
 The most relevant evidence is passed to GPT-4o, which generates concise, step-by-step resolution guidance using only the retrieved sources. Knowledge-base articles act as the primary source of truth, while historical tickets provide supporting examples from similar cases. The generated response is grounded in retrieved evidence and designed to include source references, helping agents reach resolutions faster while keeping the final decision with the support agent. The example below shows the end-to-end flow for a new customer complaint.
 ![AsterLink Resolution Assistant Demo](./public/new-complaint.png)
+
+### Interactive Terminal UI
+
+AsterLink also includes an interactive terminal interface for working with the assistant and managing the retrieval corpus without editing application code directly.
+
+The terminal currently supports:
+
+- **Look Up** - enter a customer complaint and run the support workflow to classify the issue, retrieve relevant knowledge-base articles and historical tickets, and generate grounded resolution steps.
+- **Upsert** - add or update source records in Pinecone. Knowledge-base PDFs and resolved-ticket DOCX archives are parsed through the existing ingestion pipeline before their records are upserted into the appropriate index.
+- **Delete** - remove records from the vector store. Knowledge-base deletion uses the selected source file together with the KB ID to identify the stored record, while ticket deletion uses the ticket ID.
+
+This interface provides a simple operator-facing way to test the assistant and exercise the record lifecycle implemented by the ingestion and vector-store layers.
 
 ## 3. Tech Stack
 
