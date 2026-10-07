@@ -60,3 +60,46 @@ The initial local Chroma baseline was migrated to Pinecone. Records use stable i
 I use TypeSafe's Jev System One model for structured complaint classification and GPT-4o for grounded resolution generation.
 
 **Why it matters:** Classification needs constrained, machine-readable decisions, while resolution generation requires stronger language reasoning over retrieved evidence. Using each model for the task it is best suited for keeps the pipeline more predictable and efficient.
+
+## 5. Evaluation & Results
+
+The system is evaluated at three separate stages - classification, retrieval, and generation using both the development and held-out test tickets. Evaluating each stage independently makes it easier to identify whether failures come from classification, retrieval, or generation rather than relying only on an end-to-end score.
+
+### Classification
+
+Complaint classification was evaluated on both the development set and a separate held-out test set. Each ticket contains four labels: product, category, severity, and customer sentiment.
+
+| Dataset | Correct Predictions | Accuracy |
+| --- | ---: | ---: |
+| Held-out set | 74 / 80 | **92.5%** |
+| Development set | 72 / 80 | **90.0%** |
+
+The small gap between development and held-out performance indicates that the classification rules generalize reasonably well beyond the examples used during iteration.
+
+### Retrieval
+
+Knowledge-base and historical-ticket retrieval were evaluated using **Recall@K, Precision@K, MRR, and NDCG@K**. Recall is especially important for this use case because missing the relevant support evidence is generally more costly than retrieving an additional candidate.
+
+#### Historical Ticket Retrieval
+
+| K | Recall@K | Precision@K | MRR | NDCG@K |
+| ---: | ---: | ---: | ---: | ---: |
+| 3 | 0.7917 | 0.7667 | **1.0000** | 0.8309 |
+| 4 | 0.8750 | 0.7500 | **1.0000** | 0.8775 |
+| 5 | **0.9250** | 0.4700 | **1.0000** | **0.9047** |
+
+#### Knowledge-Base Retrieval
+
+| K | Recall@K | Precision@K | MRR | NDCG@K |
+| ---: | ---: | ---: | ---: | ---: |
+| 3 | 0.9500 | 0.5000 | 0.9500 | 0.9124 |
+| 4 | 0.9750 | 0.3875 | 0.9500 | 0.9256 |
+| 5 | **1.0000** | 0.3200 | 0.9500 | **0.9374** |
+
+As expected, increasing `K` improves recall but lowers precision. This is partly because most evaluation tickets are linked to only one or two relevant knowledge-base articles or similar historical tickets, so retrieving additional results at higher `K` naturally introduces more non-relevant candidates. In production, this creates a practical trade-off between maximizing recall and controlling prompt size, latency, and generation noise.
+
+### Generation
+
+Generation quality was evaluated using two complementary checks across the development and held-out test tickets.
+
+- **Jev-as-a-judge:** Jev evaluated whether the generated resolution was acceptable using a constrained **Yes/No** decision. The average confidence score for the positive judgement was approximately **0.85**.
