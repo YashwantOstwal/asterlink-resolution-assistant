@@ -56,13 +56,7 @@ This interface provides a simple operator-facing way to test the assistant and e
 
 ## 4. System Architecture
 
-### Ingestion Pipeline
-
-![AsterLink Ingestion Pipeline](./public/ingestion.png)
-
-### Retrieval & Generation Pipeline
-
-![AsterLink Retrieval and Generation Pipeline](./public/retrieval-generation.png)
+![AsterLink Architecture](./public/architecture.png)
 
 ## 5. Engineering Explorations & Design Decisions
 
