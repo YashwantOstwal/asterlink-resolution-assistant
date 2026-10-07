@@ -50,7 +50,7 @@ def create_or_upsert_documents_to_vector_db(
 
 def delete_from_vector_db(
     index_name: str,
-    document_id: str,
+    record_id: str,
 ):
     if not pc.has_index(index_name):
         raise ValueError(
@@ -58,7 +58,7 @@ def delete_from_vector_db(
         )
 
     pc.Index(index_name).delete(
-        ids=[document_id]
+        ids=[record_id]
     )
 
 def create_kb_record_id(file_name: str, kb_id: str) -> str:
