@@ -12,7 +12,7 @@ The challenge is to build a production-grade semantic resolution assistant that 
 
 ## 2. Solution
 
-AsterLink Resolution Assistant replaces keyword-only lookup with a semantic, AI-assisted resolution workflow. A raw customer complaint is first classified using JEV into structured attributes such as product, category, severity, and customer sentiment. The complaint is then embedded and searched against separate Pinecone indexes containing AsterLink's knowledge base and resolved ticket history.
+AsterLink Resolution Assistant replaces keyword-only lookup with a semantic, AI-assisted resolution workflow. A raw customer complaint is first classified using Jev into structured attributes such as product, category, severity, and customer sentiment. The complaint is then embedded and searched against separate Pinecone indexes containing AsterLink's knowledge base and resolved ticket history.
 
 The most relevant evidence is passed to GPT-4o, which generates concise, step-by-step resolution guidance using only the retrieved sources. Knowledge-base articles act as the primary source of truth, while historical tickets provide supporting examples from similar cases. The generated response is grounded in retrieved evidence and designed to include source references, helping agents reach resolutions faster while keeping the final decision with the support agent. The example below shows the end-to-end flow for a new customer complaint.
 ![AsterLink Resolution Assistant Demo](./public/new-complaint.png)
@@ -100,10 +100,14 @@ As expected, increasing `K` improves recall but lowers precision. This is partly
 
 ### Generation
 
-Generation quality was evaluated using JEV as a structured judge across the two development and held-out test ticket sets.
+Generation quality was evaluated using Jev as a structured judge across the two development and held-out test ticket sets.
 
 | Evaluation Method | Decision Type | Result |
 | --- | --- | ---: |
-| JEV-as-a-Judge | Yes / No | **85% average confidence** |
+| Jev-as-a-Judge | Yes / No | **85% average confidence** |
 
-JEV evaluates whether the generated resolution is semantically aligned with the actual resolution steps using a constrained **Yes/No** decision. The average confidence score for positive judgements was approximately **85%**, providing a structured measure of generation quality across the evaluation set.
+Jev evaluates whether the generated resolution is semantically aligned with the actual resolution steps using a constrained **Yes/No** decision. The average confidence score for positive judgements was approximately **85%**, providing a structured measure of generation quality across the evaluation set.
+
+## Engineering Notes
+
+Handwritten exploration notes covering chunking strategies, semantic retrieval, multimodal RAG, hybrid search, MMR, RRF, and multi-query retrieval are available in [`rag-exploration-notes.pdf`](./notes.pdf).
