@@ -6,16 +6,15 @@ AsterLink Resolution Assistant is a production-oriented telecom support assistan
 
 ## Table of Contents
 
-## Table of Contents
-
 1. [Problem & Use Case](#1-problem--use-case)
 2. [Solution Overview](#2-solution-overview)
-3. [Tech Stack](#3-tech-stack)
-4. [System Architecture](#4-system-architecture)
-5. [Engineering Explorations & Design Decisions](#5-engineering-explorations--design-decisions)
-6. [Evaluation & Results](#6-evaluation--results)
-7. [System Health, Reliability & Cost](#7-system-health-reliability--cost)
-8. [Engineering Notes & RAG Exploration](#8-engineering-notes)
+3. [Watch project Demo](#3-project-demo)
+4. [Tech Stack](#4-tech-stack)
+5. [System Architecture](#5-system-architecture)
+6. [Engineering Explorations & Design Decisions](#6-engineering-explorations--design-decisions)
+7. [Evaluation & Results](#7-evaluation--results)
+8. [System Health, Reliability & Cost](#8-system-health-reliability--cost)
+9. [Engineering Notes](#9-engineering-notes)
 
 ## 1. Problem & Use Case
 
@@ -27,8 +26,15 @@ The challenge is to build a production-grade semantic resolution assistant that 
 
 AsterLink Resolution Assistant replaces keyword-only lookup with a semantic, AI-assisted resolution workflow. A raw customer complaint is first classified using Jev into structured attributes such as product, category, severity, and customer sentiment. The complaint is then embedded and searched against separate Pinecone indexes containing AsterLink's knowledge base and resolved ticket history.
 
-The most relevant evidence is passed to GPT-4o, which generates concise, step-by-step resolution guidance using only the retrieved sources. Knowledge-base articles act as the primary source of truth, while historical tickets provide supporting examples from similar cases. The generated response is grounded in retrieved evidence and designed to include source references, helping agents reach resolutions faster while keeping the final decision with the support agent. The example below shows the end-to-end flow for a new customer complaint.
-![AsterLink Resolution Assistant Demo](./public/new-complaint.png)
+The most relevant evidence is passed to GPT-4o, which generates concise, step-by-step resolution guidance using only the retrieved sources. Knowledge-base articles act as the primary source of truth, while historical tickets provide supporting examples from similar cases. The generated response is grounded in retrieved evidence and designed to include source references, helping agents reach resolutions faster while keeping the final decision with the support agent. The demo in Section 3 shows the end-to-end flow for a new customer complaint.
+
+## 3. Project Demo
+
+Watch the Asterlink Resolution Assistant in action.
+
+[![Asterlink Project Demo](https://img.youtube.com/vi/e_X22GsgUkY/maxresdefault.jpg)](https://youtu.be/e_X22GsgUkY)
+
+**[▶ Watch Full Demo on YouTube](https://youtu.be/e_X22GsgUkY)**
 
 ### Interactive Terminal UI
 
@@ -42,7 +48,7 @@ The terminal currently supports:
 
 This interface provides a simple operator-facing way to test the assistant and exercise the record lifecycle implemented by the ingestion and vector-store layers.
 
-## 3. Tech Stack
+## 4. Tech Stack
 
 | Component | Technology |
 | --- | --- |
@@ -54,11 +60,11 @@ This interface provides a simple operator-facing way to test the assistant and e
 | Complaint Classification | TypeSafe AI - JEV System One |
 | Document Processing | Unstructured |
 
-## 4. System Architecture
+## 5. System Architecture
 
 ![AsterLink Architecture](./public/architecture.png)
 
-## 5. Engineering Explorations & Design Decisions
+## 6. Engineering Explorations & Design Decisions
 
 The system was designed as more than a working RAG prototype. Each major choice was made with retrieval quality, maintainability, cost, and the ability to handle growing support data in mind.
 
@@ -93,7 +99,7 @@ I use TypeSafe's Jev System One model for structured complaint classification an
 
 **Why it matters:** Classification needs constrained, machine-readable decisions, while resolution generation requires stronger language reasoning over retrieved evidence. Using each model for the task it is best suited for keeps the pipeline more predictable and efficient.
 
-## 6. Evaluation & Results
+## 7. Evaluation & Results
 
 The system is evaluated at three separate stages-classification, retrieval, and generation-using both the development and held-out test tickets. Evaluating each stage independently makes it easier to identify whether failures come from classification, retrieval, or generation rather than relying only on an end-to-end score.
 
@@ -140,7 +146,7 @@ Generation quality was evaluated using Jev as a structured judge across the two 
 
 Jev evaluates whether the generated resolution is semantically aligned with the actual resolution steps using a constrained **Yes/No** decision. The average confidence score for positive judgements was approximately **85%**, providing a structured measure of generation quality across the evaluation set.
 
-## 7. System Health, Reliability & Cost
+## 8. System Health, Reliability & Cost
 ### Latency
 
 Latency was measured independently around classification, retrieval, and generation using `time.perf_counter()`.
@@ -183,6 +189,6 @@ Costs shown above are measurements from this project rather than fixed estimates
 
 **Observed Reliability:** The pipeline remained stable during continuous use. After extended periods of inactivity, occasional transient connection failures were observed on the first request to external services such as Pinecone and TypeSafe AI. Subsequent requests completed normally, behaviour consistent with a transient cold-start or connection-establishment issue rather than a persistent pipeline failure.
 
-## 8. Engineering Notes
+## 9. Engineering Notes
 
 Handwritten exploration notes covering chunking strategies, semantic retrieval, multimodal RAG, hybrid search, MMR, RRF, and multi-query retrieval are available in [`notes`](./notes.pdf).
