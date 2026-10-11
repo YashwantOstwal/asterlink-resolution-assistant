@@ -1,7 +1,5 @@
 # AsterLink Resolution Assistant
 
-**Prodapt Use Case 2 submission by Yashwant J (23110461)**
-
 AsterLink Resolution Assistant is a production-oriented telecom support assistant that helps support agents classify customer complaints, retrieve relevant historical tickets and knowledge-base articles, and generate grounded resolution steps.
 
 ## Table of Contents
